@@ -6,6 +6,21 @@
     <title>Movie Details Fetcher</title>
     <script src="script.js" defer></script>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Adding Tailwind's fade-in animation */
+        @keyframes fade-in {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .animate-fade-in {
+            animation: fade-in 0.5s ease-in-out;
+        }
+    </style>
 </head>
 <body class="bg-gray-100 min-h-screen flex items-center justify-center">
     <div class="w-full max-w-md mx-auto bg-white shadow-lg rounded-lg p-6 space-y-6">
@@ -18,7 +33,9 @@
         
         <div class="dialog text-center text-red-500 text-sm font-medium"></div>
         
-        <div class="show-details hidden space-y-4">
+        <div class="loading hidden text-center text-gray-600 text-sm font-medium">Fetching movie details...</div>
+
+        <div class="show-details hidden space-y-4 animate-fade-in">
             <div class="show-title text-lg font-bold text-gray-800"></div>
             <div class="show-crew text-sm text-gray-600"></div>
             <div class="plot">
@@ -29,3 +46,4 @@
     </div>
 </body>
 </html>
+
